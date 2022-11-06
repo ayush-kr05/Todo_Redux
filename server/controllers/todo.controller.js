@@ -23,6 +23,16 @@ TodoRouter.get("/", async (req, res) => {
   }
 });
 
+TodoRouter.get("/:Id", async (req, res) => {
+  const id = req.params.Id;
+  try {
+    const todo = await Todo.findById(id);
+    res.send(todo);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
 TodoRouter.delete("/:Id", async (req, res) => {
   const id = req.params.Id;
   try {
