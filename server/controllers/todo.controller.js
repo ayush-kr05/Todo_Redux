@@ -37,7 +37,7 @@ TodoRouter.delete("/:Id", async (req, res) => {
   const id = req.params.Id;
   try {
     const deletedTodo = await Todo.findByIdAndDelete(id);
-    // console.log(deletedTodo);;
+    // console.log(deletedTodo);
     res.send({ message: "Todo Deleted Succesfully" });
   } catch (error) {
     console.log(error.message);
